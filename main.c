@@ -49,7 +49,7 @@ int main(void) {
         printBoard(square);
 
         //* Get the player's move
-        printf("\tPlayer %i, enter a number : ", player);
+        printf("\t[+] Player %i, enter a number : ", player);
         scanf("%i", &choice);
 
         //* Update the board with the player's move
@@ -60,7 +60,7 @@ int main(void) {
             //* Switch to the other player
             player = (player == PLAYER_1) ? PLAYER_2 : PLAYER_1;
         } else {
-            printf("\tInvalid move! Please try again!...");
+            printf("\t[!] - Invalid move! Please try again!...");
             cgetch();
         }
     } while (gameStatus == ONGOING);
@@ -70,10 +70,10 @@ int main(void) {
 
     //* Print the game result
     if (gameStatus == GAME_DRAW) {
-        printf("It's a draw!\n");
+        printf("[*] - It's a draw!\n");
         cgetch();
     } else {
-        printf("Player %i wins!\n", gameStatus);
+        printf("\t[$] - Player %i wins!\n", gameStatus);
         cgetch();
     }
 
